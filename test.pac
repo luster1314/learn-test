@@ -1,9 +1,5 @@
 function FindProxyForURL(url, host) {    
-  if (isPlainHostName(host)) {    
-    return "DIRECT"; // 如果主机名是简单的（没有点号或子域名），则直接访问    
-  }    
-      
-  // 检查是否能够直接访问目标 URL    
+
   var direct = dnsResolve(host);    
   if (canConnect(direct)) {    
     return "DIRECT"; // 如果能够直接访问，则直接连接    
